@@ -1,0 +1,121 @@
+.tabla {
+  border-radius: 10px;
+  text-align: center;
+  padding: 5px;
+  min-width: 375px;
+  margin: 2rem auto;
+  background: linear-gradient(194.01deg, #000000d2 9.6%, #000000ce 89.64%);
+  &__img {
+    height: 100px;
+    object-fit: contain;
+  }
+  &__title {
+    font-size: 1rem;
+    margin: 1rem;
+    color: white;
+  }
+  &__info {
+    color: rgb(255, 255, 255);
+    padding: 0px 1rem;
+  }
+}
+.cart__view {
+  min-height: 80vh;
+  height: auto;
+  text-align: center;
+  margin: 1.3rem;
+}
+
+.contcart {
+  text-align: center;
+}
+
+.conttext {
+  height: 200px;
+  margin: 0 auto;
+  min-height: 76vh;
+  display: inline-block;
+}
+
+.gotohome {
+  color: white;
+}
+
+.cartview {
+  text-align: center;
+  color: rgb(0, 0, 0);
+  min-height: 70vh;
+}
+
+.total {
+  border-radius: 10px;
+  font-size: 1.3rem;
+  padding: 10px;
+  color: white;
+  background: linear-gradient(194.01deg, #000000de 9.6%, #000000e3 89.64%);
+}
+
+.borrar {
+  background-color: rgba(214, 18, 18, 0.822);
+  padding: 6px 10px;
+  border-radius: 50%;
+  color: white;
+  transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s;
+  font-weight: 600;
+}
+
+.borrar:hover {
+  transform: translateY(2px);
+  outline: none;
+  background-color: rgba(255, 0, 0, 0.897);
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.borrartodo {
+  background-color: rgb(184, 25, 25);
+  padding: 6px 10px;
+  margin: 5px;
+  font-size: 1rem;
+  color: white;
+  border-radius: 10px;
+  transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s;
+  font-weight: 600;
+}
+
+.borrartodo:hover {
+  transform: translateY(2px);
+  outline: none;
+  background-color: rgba(255, 0, 0, 0.363);
+}
+
+.confirmar {
+  background-color: rgb(19, 175, 53);
+  padding: 6px 10px;
+  font-size: 1rem;
+  margin: 5px;
+  color: white;
+  border-radius: 10px;
+  transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s;
+  font-weight: 600;
+}
+
+.confirmar:hover {
+  transform: translateY(2px);
+  outline: none;
+  background-color: rgba(19, 175, 53, 0.424);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 255px;
+  margin: auto;
+}
+
+.orden__exitosa {
+  color: green;
+}

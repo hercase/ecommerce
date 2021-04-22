@@ -1,0 +1,126 @@
+// variables:
+$breakpoint-xs: 375px;
+$breakpoint-sm: 767px;
+$breakpoint-md: 1023px;
+$breakpoint-lg: 1360px;
+
+@mixin media($media) {
+  @if $media == xs {
+    @media (max-width: $breakpoint-sm) {
+      @content;
+    }
+  } @else if $media == sm {
+    @media (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) {
+      @content;
+    }
+  } @else if $media == md {
+    @media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
+      @content;
+    }
+  } @else if $media == lg {
+    @media (min-width: $breakpoint-lg) {
+      @content;
+    }
+  }
+}
+
+.home {
+  width: 100%;
+  &__sector1 {
+    margin: 3rem;
+    display: flex;
+    justify-content: space-around;
+    @include media(xs) {
+      flex-direction: column;
+      margin: 0;
+    }
+  }
+  &__sector2 {
+    background-color: #2ec5ce;
+    display: flex;
+    justify-content: space-evenly;
+    @include media(xs) {
+      flex-direction: column;
+    }
+  }
+
+  &__lista {
+    max-width: 40%;
+    align-self: center;
+    text-align: justify;
+    font-size: 1rem;
+    @include media(xs) {
+      max-width: 90%;
+      margin: 0;
+      align-self: unset;
+    }
+  }
+  &__heroimg {
+    display: flex;
+    @include media(sm) {
+    }
+  }
+  &__text {
+    font-size: 1.2rem;
+    max-width: 36%;
+    align-self: center;
+    @include media(md) {
+      font-size: 1.2rem;
+      margin-top: 5px;
+    }
+    @include media(sm) {
+      font-size: 1.2rem;
+      text-align: left;
+    }
+    @include media(xs) {
+      font-size: 1rem;
+      text-align: justify;
+      align-self: center;
+      max-width: 90%;
+    }
+  }
+  &__p {
+    text-align: justify;
+  }
+  &__subtitle {
+    color: #2ec5ce;
+    font-weight: 800;
+  }
+  &__li {
+    flex-direction: column;
+    list-style: none;
+    text-decoration: none;
+  }
+  &__heroimg {
+    @include media(md) {
+      font-size: 1.5rem;
+      width: 300px;
+      margin-top: 5rem;
+    }
+    @include media(sm) {
+      font-size: 1.5rem;
+      width: 300px;
+      margin-top: 5rem;
+    }
+    @include media(xs) {
+      width: 300px;
+      align-self: center;
+    }
+  }
+  &__reactimg {
+    margin-top: 1.3rem;
+    @include media(md) {
+      margin-top: 1.3rem;
+    }
+    @include media(sm) {
+      width: 300px;
+      margin-top: 1.3rem;
+    }
+    @include media(xs) {
+      margin: 0;
+      font-size: 1rem;
+      text-align: justify;
+      align-self: center;
+    }
+  }
+}

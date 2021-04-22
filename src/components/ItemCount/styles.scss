@@ -1,0 +1,75 @@
+// variables:
+$breakpoint-xs: 360px;
+$breakpoint-sm: 767px;
+$breakpoint-md: 1023px;
+$breakpoint-lg: 1360px;
+
+@mixin media($media) {
+  @if $media == xs {
+    @media (max-width: $breakpoint-sm) {
+      @content;
+    }
+  } @else if $media == sm {
+    @media (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) {
+      @content;
+    }
+  } @else if $media == md {
+    @media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
+      @content;
+    }
+  } @else if $media == lg {
+    @media (min-width: $breakpoint-lg) {
+      @content;
+    }
+  }
+}
+
+.counter {
+  text-align: center;
+
+  &__display {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: black;
+    margin: 1rem;
+  }
+
+  &__button {
+    color: white;
+    background-color: #2e2e2e;
+    border-radius: 10px;
+    border: 1px solid #747272;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    font-weight: 500;
+    transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s;
+    list-style: none;
+    text-decoration: none;
+    offset: none;
+    padding: 0;
+    &:active {
+      background-color: #c9b0e4;
+      color: rgb(0, 0, 0);
+      transform: translateY(4px);
+    }
+  }
+  &__buttonadd {
+    font-size: 1rem;
+    color: white;
+    background: #5e19ae;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    display: inline-block;
+    color: white;
+    transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s;
+    padding: 10px 10px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+  }
+}
+
+.counter__buttonadd:hover {
+  background-color: #c9b0e4;
+  transform: translateY(4px);
+  outline: none;
+}

@@ -1,0 +1,115 @@
+// variables:
+$breakpoint-xs: 360px;
+$breakpoint-sm: 767px;
+$breakpoint-md: 1023px;
+$breakpoint-lg: 1360px;
+
+@mixin media($media) {
+  @if $media == xs {
+    @media (max-width: $breakpoint-sm) {
+      @content;
+    }
+  } @else if $media == sm {
+    @media (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) {
+      @content;
+    }
+  } @else if $media == md {
+    @media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
+      @content;
+    }
+  } @else if $media == lg {
+    @media (min-width: $breakpoint-lg) {
+      @content;
+    }
+  }
+}
+.containerf {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 76vh;
+  @include media(xs) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  @include media(sm) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  @include media(md) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  @include media(lg) {
+    font-size: 1.2rem;
+  }
+}
+.itemf {
+  width: 300px;
+  margin: 1rem;
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  padding: 10px;
+  background-color: rgba(250, 250, 250, 0.178);
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: center;
+  @include media(xs) {
+    padding: 0;
+  }
+  @include media(sm) {
+    padding: 10px;
+    width: 250px;
+  }
+  @include media(md) {
+    width: 300px;
+  }
+  @include media(lg) {
+  }
+
+  &__image {
+    border-radius: 10px;
+    object-fit: cover;
+    @include media(xs) {
+      font-size: 0.8rem;
+      max-width: 300px;
+      padding: 0;
+      width: fit-content;
+    }
+  }
+  &__title {
+    color: rgba(3, 0, 0, 0.678);
+    font-weight: 800;
+    font-size: 1.2rem;
+    @include media(xs) {
+      font-size: 1rem;
+    }
+  }
+  &__price {
+    color: #5e19ae;
+    font-weight: 500;
+    font-size: 1.2rem;
+    @include media(xs) {
+      font-size: 0.7rem;
+    }
+  }
+
+  &__stock {
+    color: rgb(59, 58, 58);
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    @include media(xs) {
+      font-size: 1rem;
+    }
+  }
+
+  .itemf__arrow:hover {
+    background-color: #c9b0e4;
+    transform: translateY(4px);
+    outline: none;
+  }
+}

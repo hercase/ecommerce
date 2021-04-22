@@ -1,0 +1,9 @@
+body {
+  background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190629/pngtree-vector-white-abstract-background-with-geometric-pattern-of-3d-tr-image_263231.jpg");
+  background-size: cover;
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}

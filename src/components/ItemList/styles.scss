@@ -1,0 +1,55 @@
+// variables:
+$breakpoint-xs: 360px;
+$breakpoint-sm: 767px;
+$breakpoint-md: 1023px;
+$breakpoint-lg: 1360px;
+
+@mixin media($media) {
+  @if $media == xs {
+    @media (max-width: $breakpoint-sm) {
+      @content;
+    }
+  } @else if $media == sm {
+    @media (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) {
+      @content;
+    }
+  } @else if $media == md {
+    @media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
+      @content;
+    }
+  } @else if $media == lg {
+    @media (min-width: $breakpoint-lg) {
+      @content;
+    }
+  }
+}
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.itemlist {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 1rem;
+  @include media(xs) {
+    grid-template-columns: repeat(1, 1fr);
+    font-size: 1rem;
+    justify-items: center;
+  }
+  @include media(sm) {
+    grid-template-columns: repeat(3, 1fr);
+    min-height: 9rem;
+    font-size: 0.9rem;
+    justify-content: center;
+  }
+  @include media(md) {
+    grid-template-columns: repeat(3, 1fr);
+    min-height: 9rem;
+    font-size: 1rem;
+  }
+  @include media(lg) {
+    font-size: 1.2rem;
+  }
+}
